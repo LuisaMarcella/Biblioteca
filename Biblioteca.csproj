@@ -83,6 +83,9 @@
     <EmbeddedResource Include="Formularios\frmAutor.resx">
       <DependentUpon>frmAutor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEditorial.resx">
+      <DependentUpon>frmEditorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmGenero.resx">
       <DependentUpon>frmGenero.cs</DependentUpon>
     </EmbeddedResource>
