@@ -43,9 +43,12 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.msAcciones = new System.Windows.Forms.MenuStrip();
-            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.msAcciones.SuspendLayout();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsGuardar = new System.Windows.Forms.ToolStripButton();
+            this.tsBuscar = new System.Windows.Forms.ToolStripButton();
+            this.tsEliminar = new System.Windows.Forms.ToolStripButton();
+            this.tsLimpiar = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -174,33 +177,65 @@
             this.textBox1.Size = new System.Drawing.Size(142, 26);
             this.textBox1.TabIndex = 1;
             // 
-            // msAcciones
+            // toolStrip1
             // 
-            this.msAcciones.BackColor = System.Drawing.Color.Moccasin;
-            this.msAcciones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.msAcciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.msAcciones.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.msAcciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guardarToolStripMenuItem});
-            this.msAcciones.Location = new System.Drawing.Point(623, 0);
-            this.msAcciones.Name = "msAcciones";
-            this.msAcciones.Size = new System.Drawing.Size(31, 282);
-            this.msAcciones.TabIndex = 7;
-            this.msAcciones.Text = "menuStrip1";
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsGuardar,
+            this.tsBuscar,
+            this.tsEliminar,
+            this.tsLimpiar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(654, 39);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // guardarToolStripMenuItem
+            // tsGuardar
             // 
-            this.guardarToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.guardarToolStripMenuItem.Image = global::Biblioteca.Properties.Resources.guardar;
-            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(24, 20);
-            this.guardarToolStripMenuItem.Text = "Guardar";
+            this.tsGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsGuardar.Image = global::Biblioteca.Properties.Resources.guardar1;
+            this.tsGuardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsGuardar.Name = "tsGuardar";
+            this.tsGuardar.Size = new System.Drawing.Size(36, 36);
+            this.tsGuardar.Text = "Guardar";
+            // 
+            // tsBuscar
+            // 
+            this.tsBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBuscar.Image = global::Biblioteca.Properties.Resources.buscar;
+            this.tsBuscar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBuscar.Name = "tsBuscar";
+            this.tsBuscar.Size = new System.Drawing.Size(36, 36);
+            this.tsBuscar.Text = "Buscar";
+            // 
+            // tsEliminar
+            // 
+            this.tsEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsEliminar.Image = global::Biblioteca.Properties.Resources.eliminar;
+            this.tsEliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsEliminar.Name = "tsEliminar";
+            this.tsEliminar.Size = new System.Drawing.Size(36, 36);
+            this.tsEliminar.Text = "Eliminar";
+            // 
+            // tsLimpiar
+            // 
+            this.tsLimpiar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsLimpiar.Image = global::Biblioteca.Properties.Resources.limpiar;
+            this.tsLimpiar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsLimpiar.Name = "tsLimpiar";
+            this.tsLimpiar.Size = new System.Drawing.Size(36, 36);
+            this.tsLimpiar.Text = "Limpiar";
             // 
             // frmLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 282);
+            this.ClientSize = new System.Drawing.Size(654, 296);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtID);
@@ -216,14 +251,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.msAcciones);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainMenuStrip = this.msAcciones;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLibros";
             this.Text = "LIBROS";
-            this.msAcciones.ResumeLayout(false);
-            this.msAcciones.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,7 +279,10 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MenuStrip msAcciones;
-        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsGuardar;
+        private System.Windows.Forms.ToolStripButton tsBuscar;
+        private System.Windows.Forms.ToolStripButton tsEliminar;
+        private System.Windows.Forms.ToolStripButton tsLimpiar;
     }
 }

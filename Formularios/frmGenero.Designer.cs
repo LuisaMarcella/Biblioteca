@@ -32,9 +32,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsGuardar = new System.Windows.Forms.ToolStripButton();
+            this.tsBuscar = new System.Windows.Forms.ToolStripButton();
+            this.tsEliminar = new System.Windows.Forms.ToolStripButton();
+            this.tsLimpiar = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -69,24 +73,6 @@
             this.txtNombre.Size = new System.Drawing.Size(354, 26);
             this.txtNombre.TabIndex = 3;
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(284, 137);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(88, 32);
-            this.btnAceptar.TabIndex = 4;
-            this.btnAceptar.Text = "Guardar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(378, 137);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(84, 32);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(214, 64);
@@ -96,14 +82,67 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsGuardar,
+            this.tsBuscar,
+            this.tsEliminar,
+            this.tsLimpiar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(493, 39);
+            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsGuardar
+            // 
+            this.tsGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsGuardar.Image = global::Biblioteca.Properties.Resources.guardar1;
+            this.tsGuardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsGuardar.Name = "tsGuardar";
+            this.tsGuardar.Size = new System.Drawing.Size(36, 36);
+            this.tsGuardar.Text = "Guardar";
+            this.tsGuardar.Click += new System.EventHandler(this.tsGuardar_Click);
+            // 
+            // tsBuscar
+            // 
+            this.tsBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBuscar.Image = global::Biblioteca.Properties.Resources.buscar;
+            this.tsBuscar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBuscar.Name = "tsBuscar";
+            this.tsBuscar.Size = new System.Drawing.Size(36, 36);
+            this.tsBuscar.Text = "Buscar";
+            // 
+            // tsEliminar
+            // 
+            this.tsEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsEliminar.Image = global::Biblioteca.Properties.Resources.eliminar;
+            this.tsEliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsEliminar.Name = "tsEliminar";
+            this.tsEliminar.Size = new System.Drawing.Size(36, 36);
+            this.tsEliminar.Text = "Eliminar";
+            // 
+            // tsLimpiar
+            // 
+            this.tsLimpiar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsLimpiar.Image = global::Biblioteca.Properties.Resources.limpiar;
+            this.tsLimpiar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsLimpiar.Name = "tsLimpiar";
+            this.tsLimpiar.Size = new System.Drawing.Size(36, 36);
+            this.tsLimpiar.Text = "Limpiar";
+            // 
             // frmGenero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 204);
+            this.ClientSize = new System.Drawing.Size(493, 178);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
@@ -112,6 +151,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmGenero";
             this.Text = "Generos Literarios";
+            this.Load += new System.EventHandler(this.frmGenero_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,8 +165,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsGuardar;
+        private System.Windows.Forms.ToolStripButton tsBuscar;
+        private System.Windows.Forms.ToolStripButton tsEliminar;
+        private System.Windows.Forms.ToolStripButton tsLimpiar;
     }
 }
