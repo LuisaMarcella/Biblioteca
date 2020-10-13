@@ -22,5 +22,16 @@ namespace Biblioteca.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\sqlexpress;Initial Catalog=BibliotecaSQL;User ID=marcella;P" +
+            "assword=1234")]
+        public string BibliotecaSQLConnectionString {
+            get {
+                return ((string)(this["BibliotecaSQLConnectionString"]));
+            }
+        }
     }
 }

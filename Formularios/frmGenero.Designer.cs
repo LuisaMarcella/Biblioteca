@@ -135,6 +135,7 @@
             this.tsLimpiar.Name = "tsLimpiar";
             this.tsLimpiar.Size = new System.Drawing.Size(36, 36);
             this.tsLimpiar.Text = "Limpiar";
+            this.tsLimpiar.Click += new System.EventHandler(this.tsLimpiar_Click);
             // 
             // frmGenero
             // 
