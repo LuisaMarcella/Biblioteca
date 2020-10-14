@@ -747,23 +747,23 @@ namespace Biblioteca.dsGenerosTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Generos] WHERE (([id] = @Original_id) AND ([Nombre] = @Origina" +
-                "l_Nombre))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Generos] WHERE (([id] = @Original_id) AND ([Nombre] = @Original_Nomb" +
+                "re))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Generos] ([id], [Nombre]) VALUES (@id, @Nombre);\r\nSELECT id, N" +
-                "ombre FROM Generos WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Generos] ([id], [Nombre]) VALUES (@id, @Nombre);\r\nSELECT id, Nombre " +
+                "FROM Generos WHERE (id = @id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Generos] SET [id] = @id, [Nombre] = @Nombre WHERE (([id] = @Origina" +
-                "l_id) AND ([Nombre] = @Original_Nombre));\r\nSELECT id, Nombre FROM Generos WHERE " +
-                "(id = @id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Generos] SET [id] = @id, [Nombre] = @Nombre WHERE (([id] = @Original_id) " +
+                "AND ([Nombre] = @Original_Nombre));\r\nSELECT id, Nombre FROM Generos WHERE (id = " +
+                "@id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -784,16 +784,24 @@ namespace Biblioteca.dsGenerosTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, Nombre FROM dbo.Generos";
+            this._commandCollection[0].CommandText = "SELECT        id, Nombre\r\nFROM            Generos\r\nWHERE        (Nombre LIKE \'%\' " +
+                "+ @Filtro + \'%\')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Filtro", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsGeneros.GenerosDataTable dataTable) {
+        public virtual int Fill(dsGeneros.GenerosDataTable dataTable, string Filtro) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Filtro == null)) {
+                throw new global::System.ArgumentNullException("Filtro");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Filtro));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -805,8 +813,14 @@ namespace Biblioteca.dsGenerosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsGeneros.GenerosDataTable GetData() {
+        public virtual dsGeneros.GenerosDataTable GetData(string Filtro) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Filtro == null)) {
+                throw new global::System.ArgumentNullException("Filtro");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Filtro));
+            }
             dsGeneros.GenerosDataTable dataTable = new dsGeneros.GenerosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

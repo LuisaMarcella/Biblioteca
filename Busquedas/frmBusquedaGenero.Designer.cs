@@ -31,14 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.dgGeneros = new System.Windows.Forms.DataGridView();
-            this.dsGeneros = new Biblioteca.dsGeneros();
-            this.generosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.generosTableAdapter = new Biblioteca.dsGenerosTableAdapters.GenerosTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsGeneros = new Biblioteca.dsGeneros();
+            this.generosTableAdapter = new Biblioteca.dsGenerosTableAdapters.GenerosTableAdapter();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgGeneros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGeneros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsGeneros)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFiltro
@@ -47,6 +49,7 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(494, 26);
             this.txtFiltro.TabIndex = 0;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // dgGeneros
             // 
@@ -64,20 +67,6 @@
             this.dgGeneros.Size = new System.Drawing.Size(494, 242);
             this.dgGeneros.TabIndex = 1;
             // 
-            // dsGeneros
-            // 
-            this.dsGeneros.DataSetName = "dsGeneros";
-            this.dsGeneros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // generosBindingSource
-            // 
-            this.generosBindingSource.DataMember = "Generos";
-            this.generosBindingSource.DataSource = this.dsGeneros;
-            // 
-            // generosTableAdapter
-            // 
-            this.generosTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -92,21 +81,55 @@
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // generosBindingSource
+            // 
+            this.generosBindingSource.DataMember = "Generos";
+            this.generosBindingSource.DataSource = this.dsGeneros;
+            // 
+            // dsGeneros
+            // 
+            this.dsGeneros.DataSetName = "dsGeneros";
+            this.dsGeneros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // generosTableAdapter
+            // 
+            this.generosTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(332, 310);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(93, 29);
+            this.btnAceptar.TabIndex = 2;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(431, 310);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(93, 29);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // frmBusquedaGenero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 328);
+            this.ClientSize = new System.Drawing.Size(551, 361);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgGeneros);
             this.Controls.Add(this.txtFiltro);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmBusquedaGenero";
-            this.Text = "frmBusquedaGenero";
+            this.Text = "Busqueda Genero";
             this.Load += new System.EventHandler(this.frmBusquedaGenero_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgGeneros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGeneros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsGeneros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +144,7 @@
         private dsGenerosTableAdapters.GenerosTableAdapter generosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

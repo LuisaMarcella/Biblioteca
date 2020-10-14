@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca.Formularios;
+using Biblioteca.Busquedas;
 
 namespace Biblioteca
 {
@@ -17,7 +18,7 @@ namespace Biblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGenero());
+            Application.Run(new frmBusquedaGenero());
         }
     }
 }
