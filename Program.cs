@@ -18,7 +18,7 @@ namespace Biblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBusquedaGenero());
+            Application.Run(new frmBusquedaEditoriales());
         }
     }
 }

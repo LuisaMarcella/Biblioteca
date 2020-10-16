@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busquedas\frmBusquedaEditoriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaEditoriales.Designer.cs">
+      <DependentUpon>frmBusquedaEditoriales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas\frmBusquedaGenero.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Busquedas\frmBusquedaEditoriales.resx">
+      <DependentUpon>frmBusquedaEditoriales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\frmBusquedaGenero.resx">
       <DependentUpon>frmBusquedaGenero.cs</DependentUpon>
     </EmbeddedResource>
