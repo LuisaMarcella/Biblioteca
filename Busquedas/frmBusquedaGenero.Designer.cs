@@ -103,6 +103,7 @@
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -112,6 +113,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmBusquedaGenero
             // 
@@ -139,9 +141,9 @@
 
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.DataGridView dgGeneros;
-        private dsGeneros dsGeneros;
-        private System.Windows.Forms.BindingSource generosBindingSource;
-        private dsGenerosTableAdapters.GenerosTableAdapter generosTableAdapter;
+        public dsGeneros dsGeneros;
+        public System.Windows.Forms.BindingSource generosBindingSource;
+        public dsGenerosTableAdapters.GenerosTableAdapter generosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnAceptar;

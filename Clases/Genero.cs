@@ -16,6 +16,7 @@ namespace Biblioteca.Clases
 
         public int id;
         public string Nombre;
+        public bool encontro = false;
 
         public Genero()
         {
@@ -42,6 +43,20 @@ namespace Biblioteca.Clases
             con.Close();
             mensaje = "Listo";
             return mensaje;
+        }
+
+        public void buscar()
+        {
+            Busquedas.frmBusquedaGenero x = new Busquedas.frmBusquedaGenero(con.ConnectionString);
+            x.ShowDialog();
+            if (x.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                id = x.dsGeneros.Generos[x.generosBindingSource.Position].id;
+                Nombre = x.dsGeneros.Generos[x.generosBindingSource.Position].Nombre;
+                encontro = true;
+            }
+            else
+                encontro = false;
         }
     }
 }

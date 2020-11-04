@@ -115,6 +115,7 @@
             this.tsBuscar.Name = "tsBuscar";
             this.tsBuscar.Size = new System.Drawing.Size(36, 36);
             this.tsBuscar.Text = "Buscar";
+            this.tsBuscar.Click += new System.EventHandler(this.tsBuscar_Click);
             // 
             // tsEliminar
             // 

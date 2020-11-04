@@ -20,7 +20,7 @@ namespace Biblioteca.Formularios
 
         private void frmGenero_Load(object sender, EventArgs e)
         {
-            txtID.Enabled = true;
+            txtID.Enabled = false;
             txtID.Text = "0";
         }
         void limpiar()
@@ -47,6 +47,17 @@ namespace Biblioteca.Formularios
         private void tsLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void tsBuscar_Click(object sender, EventArgs e)
+        {
+            Clases.Genero x = new Genero();
+            x.buscar();
+            if(x.encontro == true)
+            {
+                txtID.Text = x.id.ToString();
+                txtNombre.Text = x.Nombre;
+            }
         }
     }
 }
