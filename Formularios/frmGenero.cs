@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca.Clases;
+using System.Data.SqlClient;
 
 namespace Biblioteca.Formularios
 {
     public partial class frmGenero : Form
     {
+        static Conexion co = new Conexion();
+        SqlConnection con = new SqlConnection(co.conexion());
+        SqlDataReader lector;
         public frmGenero()
         {
             InitializeComponent();
@@ -21,12 +25,23 @@ namespace Biblioteca.Formularios
         private void frmGenero_Load(object sender, EventArgs e)
         {
             txtID.Enabled = false;
-            txtID.Text = "0";
+            cargarconsecutivo();
         }
         void limpiar()
         {
-            txtID.Text = "0";
+            cargarconsecutivo();
             txtNombre.Clear();
+        }
+        void cargarconsecutivo()
+        {
+            SqlCommand comando = new SqlCommand("select isnull(max(id),0)+1 as maxid from Generos", con);
+            con.Open();
+            lector = comando.ExecuteReader();
+            if(lector.Read())
+            {
+                txtID.Text = lector["maxid"].ToString();
+            }
+            con.Close();
         }
         private void tsGuardar_Click(object sender, EventArgs e)
         {
