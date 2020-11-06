@@ -19,7 +19,14 @@ namespace Biblioteca.Formularios
 
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmLibros x = new frmLibros();
+            x.Show();
+        }
 
+        private void tsGeneros_Click(object sender, EventArgs e)
+        {
+            frmGenero x = new frmGenero();
+            x.Show();
         }
     }
 }

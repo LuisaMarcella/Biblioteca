@@ -74,5 +74,13 @@ namespace Biblioteca.Formularios
                 txtNombre.Text = x.Nombre;
             }
         }
+
+        private void tsEliminar_Click(object sender, EventArgs e)
+        {
+            Clases.Genero x = new Genero();
+            x.id = int.Parse(txtID.Text);
+            MessageBox.Show(x.eliminar());
+            limpiar();
+        }
     }
 }

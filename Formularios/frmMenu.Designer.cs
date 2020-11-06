@@ -30,6 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.librosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.catalogosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsGeneros = new System.Windows.Forms.ToolStripMenuItem();
+            this.editorialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,19 +43,49 @@
             this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.librosToolStripMenuItem});
+            this.librosToolStripMenuItem,
+            this.catalogosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(67, 638);
+            this.menuStrip1.Size = new System.Drawing.Size(123, 638);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // librosToolStripMenuItem
             // 
             this.librosToolStripMenuItem.Name = "librosToolStripMenuItem";
-            this.librosToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.librosToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.librosToolStripMenuItem.Text = "Libros";
             this.librosToolStripMenuItem.Click += new System.EventHandler(this.librosToolStripMenuItem_Click);
+            // 
+            // catalogosToolStripMenuItem
+            // 
+            this.catalogosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsGeneros,
+            this.editorialesToolStripMenuItem,
+            this.autoresToolStripMenuItem});
+            this.catalogosToolStripMenuItem.Name = "catalogosToolStripMenuItem";
+            this.catalogosToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.catalogosToolStripMenuItem.Text = "Catalogos";
+            // 
+            // tsGeneros
+            // 
+            this.tsGeneros.Name = "tsGeneros";
+            this.tsGeneros.Size = new System.Drawing.Size(180, 24);
+            this.tsGeneros.Text = "Generos";
+            this.tsGeneros.Click += new System.EventHandler(this.tsGeneros_Click);
+            // 
+            // editorialesToolStripMenuItem
+            // 
+            this.editorialesToolStripMenuItem.Name = "editorialesToolStripMenuItem";
+            this.editorialesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.editorialesToolStripMenuItem.Text = "Editoriales";
+            // 
+            // autoresToolStripMenuItem
+            // 
+            this.autoresToolStripMenuItem.Name = "autoresToolStripMenuItem";
+            this.autoresToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.autoresToolStripMenuItem.Text = "Autores";
             // 
             // frmMenu
             // 
@@ -75,5 +109,9 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem librosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem catalogosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsGeneros;
+        private System.Windows.Forms.ToolStripMenuItem editorialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autoresToolStripMenuItem;
     }
 }
