@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +49,17 @@
             this.tsBuscar = new System.Windows.Forms.ToolStripButton();
             this.tsEliminar = new System.Windows.Forms.ToolStripButton();
             this.tsLimpiar = new System.Windows.Forms.ToolStripButton();
+            this.dsvAutores = new Biblioteca.dsvAutores();
+            this.vAutoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vAutoresTableAdapter = new Biblioteca.dsvAutoresTableAdapters.vAutoresTableAdapter();
+            this.dsvEditoriales = new Biblioteca.dsvEditoriales();
+            this.editorialesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.editorialesTableAdapter = new Biblioteca.dsvEditorialesTableAdapters.EditorialesTableAdapter();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsvAutores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vAutoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsvEditoriales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editorialesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,14 +126,19 @@
             // 
             // cboAutor
             // 
+            this.cboAutor.DataSource = this.vAutoresBindingSource;
+            this.cboAutor.DisplayMember = "NombreCompleto";
+            this.cboAutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAutor.FormattingEnabled = true;
             this.cboAutor.Location = new System.Drawing.Point(107, 181);
             this.cboAutor.Name = "cboAutor";
             this.cboAutor.Size = new System.Drawing.Size(232, 28);
             this.cboAutor.TabIndex = 3;
+            this.cboAutor.ValueMember = "id";
             // 
             // cboGenero
             // 
+            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Location = new System.Drawing.Point(431, 181);
             this.cboGenero.Name = "cboGenero";
@@ -131,11 +147,15 @@
             // 
             // cboEditorial
             // 
+            this.cboEditorial.DataSource = this.editorialesBindingSource;
+            this.cboEditorial.DisplayMember = "Nombre";
+            this.cboEditorial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEditorial.FormattingEnabled = true;
             this.cboEditorial.Location = new System.Drawing.Point(107, 217);
             this.cboEditorial.Name = "cboEditorial";
             this.cboEditorial.Size = new System.Drawing.Size(121, 28);
             this.cboEditorial.TabIndex = 5;
+            this.cboEditorial.ValueMember = "id";
             // 
             // dtpFechaDePublicacion
             // 
@@ -156,6 +176,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(107, 113);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 26);
@@ -230,6 +251,34 @@
             this.tsLimpiar.Size = new System.Drawing.Size(36, 36);
             this.tsLimpiar.Text = "Limpiar";
             // 
+            // dsvAutores
+            // 
+            this.dsvAutores.DataSetName = "dsvAutores";
+            this.dsvAutores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vAutoresBindingSource
+            // 
+            this.vAutoresBindingSource.DataMember = "vAutores";
+            this.vAutoresBindingSource.DataSource = this.dsvAutores;
+            // 
+            // vAutoresTableAdapter
+            // 
+            this.vAutoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // dsvEditoriales
+            // 
+            this.dsvEditoriales.DataSetName = "dsvEditoriales";
+            this.dsvEditoriales.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // editorialesBindingSource
+            // 
+            this.editorialesBindingSource.DataMember = "Editoriales";
+            this.editorialesBindingSource.DataSource = this.dsvEditoriales;
+            // 
+            // editorialesTableAdapter
+            // 
+            this.editorialesTableAdapter.ClearBeforeFill = true;
+            // 
             // frmLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -255,8 +304,13 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLibros";
             this.Text = "LIBROS";
+            this.Load += new System.EventHandler(this.frmLibros_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsvAutores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vAutoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsvEditoriales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editorialesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +338,11 @@
         private System.Windows.Forms.ToolStripButton tsBuscar;
         private System.Windows.Forms.ToolStripButton tsEliminar;
         private System.Windows.Forms.ToolStripButton tsLimpiar;
+        private dsvAutores dsvAutores;
+        private System.Windows.Forms.BindingSource vAutoresBindingSource;
+        private dsvAutoresTableAdapters.vAutoresTableAdapter vAutoresTableAdapter;
+        private dsvEditoriales dsvEditoriales;
+        private System.Windows.Forms.BindingSource editorialesBindingSource;
+        private dsvEditorialesTableAdapters.EditorialesTableAdapter editorialesTableAdapter;
     }
 }

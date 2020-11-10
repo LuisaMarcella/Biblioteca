@@ -16,5 +16,14 @@ namespace Biblioteca.Formularios
         {
             InitializeComponent();
         }
+
+        private void frmLibros_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dsvEditoriales.Editoriales' Puede moverla o quitarla según sea necesario.
+            this.editorialesTableAdapter.Fill(this.dsvEditoriales.Editoriales);
+            // TODO: esta línea de código carga datos en la tabla 'dsvAutores.vAutores' Puede moverla o quitarla según sea necesario.
+            this.vAutoresTableAdapter.Fill(this.dsvAutores.vAutores);
+
+        }
     }
 }
