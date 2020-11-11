@@ -37,8 +37,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.cboAutor = new System.Windows.Forms.ComboBox();
+            this.vAutoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsvAutores = new Biblioteca.dsvAutores();
             this.cboGenero = new System.Windows.Forms.ComboBox();
             this.cboEditorial = new System.Windows.Forms.ComboBox();
+            this.editorialesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsvEditoriales = new Biblioteca.dsvEditoriales();
             this.dtpFechaDePublicacion = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -49,17 +53,13 @@
             this.tsBuscar = new System.Windows.Forms.ToolStripButton();
             this.tsEliminar = new System.Windows.Forms.ToolStripButton();
             this.tsLimpiar = new System.Windows.Forms.ToolStripButton();
-            this.dsvAutores = new Biblioteca.dsvAutores();
-            this.vAutoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vAutoresTableAdapter = new Biblioteca.dsvAutoresTableAdapters.vAutoresTableAdapter();
-            this.dsvEditoriales = new Biblioteca.dsvEditoriales();
-            this.editorialesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.editorialesTableAdapter = new Biblioteca.dsvEditorialesTableAdapters.EditorialesTableAdapter();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsvAutores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vAutoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsvEditoriales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsvAutores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorialesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsvEditoriales)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -136,6 +136,16 @@
             this.cboAutor.TabIndex = 3;
             this.cboAutor.ValueMember = "id";
             // 
+            // vAutoresBindingSource
+            // 
+            this.vAutoresBindingSource.DataMember = "vAutores";
+            this.vAutoresBindingSource.DataSource = this.dsvAutores;
+            // 
+            // dsvAutores
+            // 
+            this.dsvAutores.DataSetName = "dsvAutores";
+            this.dsvAutores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cboGenero
             // 
             this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -156,6 +166,16 @@
             this.cboEditorial.Size = new System.Drawing.Size(121, 28);
             this.cboEditorial.TabIndex = 5;
             this.cboEditorial.ValueMember = "id";
+            // 
+            // editorialesBindingSource
+            // 
+            this.editorialesBindingSource.DataMember = "Editoriales";
+            this.editorialesBindingSource.DataSource = this.dsvEditoriales;
+            // 
+            // dsvEditoriales
+            // 
+            this.dsvEditoriales.DataSetName = "dsvEditoriales";
+            this.dsvEditoriales.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtpFechaDePublicacion
             // 
@@ -195,7 +215,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(431, 113);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 26);
+            this.textBox1.Size = new System.Drawing.Size(146, 26);
             this.textBox1.TabIndex = 1;
             // 
             // toolStrip1
@@ -251,29 +271,9 @@
             this.tsLimpiar.Size = new System.Drawing.Size(36, 36);
             this.tsLimpiar.Text = "Limpiar";
             // 
-            // dsvAutores
-            // 
-            this.dsvAutores.DataSetName = "dsvAutores";
-            this.dsvAutores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vAutoresBindingSource
-            // 
-            this.vAutoresBindingSource.DataMember = "vAutores";
-            this.vAutoresBindingSource.DataSource = this.dsvAutores;
-            // 
             // vAutoresTableAdapter
             // 
             this.vAutoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // dsvEditoriales
-            // 
-            this.dsvEditoriales.DataSetName = "dsvEditoriales";
-            this.dsvEditoriales.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // editorialesBindingSource
-            // 
-            this.editorialesBindingSource.DataMember = "Editoriales";
-            this.editorialesBindingSource.DataSource = this.dsvEditoriales;
             // 
             // editorialesTableAdapter
             // 
@@ -305,12 +305,12 @@
             this.Name = "frmLibros";
             this.Text = "LIBROS";
             this.Load += new System.EventHandler(this.frmLibros_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vAutoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsvAutores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editorialesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsvEditoriales)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsvAutores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vAutoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsvEditoriales)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editorialesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
