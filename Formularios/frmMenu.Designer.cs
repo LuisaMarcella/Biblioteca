@@ -67,6 +67,7 @@
             this.catalogosToolStripMenuItem.Name = "catalogosToolStripMenuItem";
             this.catalogosToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.catalogosToolStripMenuItem.Text = "Catalogos";
+            this.catalogosToolStripMenuItem.Click += new System.EventHandler(this.catalogosToolStripMenuItem_Click);
             // 
             // tsGeneros
             // 
@@ -80,6 +81,7 @@
             this.editorialesToolStripMenuItem.Name = "editorialesToolStripMenuItem";
             this.editorialesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.editorialesToolStripMenuItem.Text = "Editoriales";
+            this.editorialesToolStripMenuItem.Click += new System.EventHandler(this.editorialesToolStripMenuItem_Click);
             // 
             // autoresToolStripMenuItem
             // 

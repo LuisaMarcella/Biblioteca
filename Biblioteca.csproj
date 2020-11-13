@@ -60,6 +60,7 @@
       <DependentUpon>frmBusquedaGenero.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Editoriales.cs" />
     <Compile Include="Clases\Genero.cs" />
     <Compile Include="Clases\Libros.cs" />
     <Compile Include="dsGeneros.Designer.cs">

@@ -52,6 +52,7 @@
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // dgEditoriales
             // 
@@ -96,7 +97,7 @@
 
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.DataGridView dgEditoriales;
+        public System.Windows.Forms.DataGridView dgEditoriales;
         private System.Windows.Forms.TextBox txtFiltro;
     }
 }

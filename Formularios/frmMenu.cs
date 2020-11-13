@@ -28,5 +28,16 @@ namespace Biblioteca.Formularios
             frmGenero x = new frmGenero();
             x.Show();
         }
+
+        private void catalogosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editorialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEditorial x = new frmEditorial();
+            x.Show();
+        }
     }
 }

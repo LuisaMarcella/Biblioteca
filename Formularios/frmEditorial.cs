@@ -16,5 +16,11 @@ namespace Biblioteca.Formularios
         {
             InitializeComponent();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Clases.Editoriales x = new Clases.Editoriales();
+            x.buscar();
+        }
     }
 }

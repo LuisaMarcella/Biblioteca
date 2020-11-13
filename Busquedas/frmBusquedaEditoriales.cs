@@ -16,7 +16,6 @@ namespace Biblioteca.Busquedas
     {
         Conexion co = new Conexion();
         SqlConnection con = new SqlConnection();
-        
         public frmBusquedaEditoriales()
         {
             InitializeComponent();
@@ -29,18 +28,22 @@ namespace Biblioteca.Busquedas
         }
         void cargardg()
         {
-            string sql = "SELECT id, Nombre FROM Editoriales where Nombre LIKE '%" + txtFiltro.Text + "%'";            
-                con.Open();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, con);
-                DataTable dt = new DataTable();
-                dataAdapter.Fill(dt);
-                dgEditoriales.DataSource = dt;
-                con.Close();            
+            string sql = "SELECT id, Nombre FROM Editoriales where Nombre LIKE '%" + txtFiltro.Text + "%'";
+            DataTable dt = new DataTable();
+            con.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, con);
+            dataAdapter.Fill(dt);
+            dgEditoriales.DataSource = dt;
+            con.Close();            
         }
-
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             cargardg();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

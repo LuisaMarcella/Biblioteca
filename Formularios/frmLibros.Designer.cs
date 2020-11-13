@@ -47,7 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtISBN = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsGuardar = new System.Windows.Forms.ToolStripButton();
             this.tsBuscar = new System.Windows.Forms.ToolStripButton();
@@ -211,12 +211,12 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "ISBN";
             // 
-            // textBox1
+            // txtISBN
             // 
-            this.textBox1.Location = new System.Drawing.Point(431, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 26);
-            this.textBox1.TabIndex = 1;
+            this.txtISBN.Location = new System.Drawing.Point(431, 113);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(146, 26);
+            this.txtISBN.TabIndex = 1;
             // 
             // toolStrip1
             // 
@@ -240,6 +240,7 @@
             this.tsGuardar.Name = "tsGuardar";
             this.tsGuardar.Size = new System.Drawing.Size(36, 36);
             this.tsGuardar.Text = "Guardar";
+            this.tsGuardar.Click += new System.EventHandler(this.tsGuardar_Click);
             // 
             // tsBuscar
             // 
@@ -285,7 +286,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 296);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label7);
@@ -332,7 +333,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsGuardar;
         private System.Windows.Forms.ToolStripButton tsBuscar;
