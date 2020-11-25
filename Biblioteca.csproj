@@ -59,6 +59,12 @@
     <Compile Include="Busquedas\frmBusquedaGenero.Designer.cs">
       <DependentUpon>frmBusquedaGenero.cs</DependentUpon>
     </Compile>
+    <Compile Include="Busquedas\frmBusquedaLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaLibros.Designer.cs">
+      <DependentUpon>frmBusquedaLibros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Editoriales.cs" />
     <Compile Include="Clases\Genero.cs" />
@@ -67,6 +73,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsGeneros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLibros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLibros.xsd</DependentUpon>
     </Compile>
     <Compile Include="dsvAutores.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -116,6 +127,9 @@
     <EmbeddedResource Include="Busquedas\frmBusquedaGenero.resx">
       <DependentUpon>frmBusquedaGenero.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\frmBusquedaLibros.resx">
+      <DependentUpon>frmBusquedaLibros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmAutor.resx">
       <DependentUpon>frmAutor.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +165,17 @@
     </None>
     <None Include="dsGeneros.xss">
       <DependentUpon>dsGeneros.xsd</DependentUpon>
+    </None>
+    <None Include="dsLibros.xsc">
+      <DependentUpon>dsLibros.xsd</DependentUpon>
+    </None>
+    <None Include="dsLibros.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLibros.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLibros.xss">
+      <DependentUpon>dsLibros.xsd</DependentUpon>
     </None>
     <None Include="dsvAutores.xsc">
       <DependentUpon>dsvAutores.xsd</DependentUpon>

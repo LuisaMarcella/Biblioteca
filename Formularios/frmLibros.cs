@@ -67,5 +67,21 @@ namespace Biblioteca.Formularios
             x.FechaPublicacion = dtpFechaDePublicacion.Value;
             MessageBox.Show(x.guardar());
         }
+
+        private void tsBuscar_Click(object sender, EventArgs e)
+        {
+            Libros x = new Libros();
+            x.buscar();
+            if(x.encontro == true)
+            {
+                txtID.Text = x.id.ToString();
+                txtISBN.Text = x.ISBN;
+                txtTitulo.Text = x.Titulo;
+                cboAutor.SelectedValue = x.idAutor;
+                cboGenero.SelectedValue = x.idGenero;
+                cboEditorial.SelectedValue = x.idEditorial;
+                dtpFechaDePublicacion.Value = x.FechaPublicacion;
+            }
+        }
     }
 }

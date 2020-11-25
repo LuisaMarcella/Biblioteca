@@ -21,6 +21,7 @@ namespace Biblioteca.Clases
         public int idGenero;
         public int idEditorial;
         public DateTime FechaPublicacion;
+        public bool encontro = false;
 
         public Libros()
         {
@@ -47,6 +48,24 @@ namespace Biblioteca.Clases
             con.Close();
             mensaje = "Listo";
             return mensaje;
+        }
+        public void buscar()
+        {
+            Busquedas.frmBusquedaLibros x = new Busquedas.frmBusquedaLibros(con.ConnectionString);
+            x.ShowDialog();
+            if (x.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                id = x.dsLibros.vLibros[x.vLibrosBindingSource.Position].id;
+                ISBN = x.dsLibros.vLibros[x.vLibrosBindingSource.Position].ISBN;
+                Titulo = x.dsLibros.vLibros[x.vLibrosBindingSource.Position].Titulo;
+                idAutor = x.dsLibros.vLibros[x.vLibrosBindingSource.Position].idAutor;
+                idGenero = x.dsLibros.vLibros[x.vLibrosBindingSource.Position].idGenero;
+                idEditorial = x.dsLibros.vLibros[x.vLibrosBindingSource.Position].idEditorial;
+                FechaPublicacion = x.dsLibros.vLibros[x.vLibrosBindingSource.Position].FechaPublicacion;
+                encontro = true;
+            }
+            else
+                encontro = false;
         }
     }
 }
