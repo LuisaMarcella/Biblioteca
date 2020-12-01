@@ -83,5 +83,12 @@ namespace Biblioteca.Formularios
                 dtpFechaDePublicacion.Value = x.FechaPublicacion;
             }
         }
+
+        private void tsEliminar_Click(object sender, EventArgs e)
+        {
+            Libros x = new Libros();
+            x.id = int.Parse(txtID.Text);
+            MessageBox.Show(x.eliminar());
+        }
     }
 }

@@ -67,5 +67,21 @@ namespace Biblioteca.Clases
             else
                 encontro = false;
         }
+        public string eliminar()
+        {
+            string mensaje = "";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "spLibros";
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@op", 3);
+            comando.Parameters.AddWithValue("@id", id);
+
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+            mensaje = "Campo eliminado.";
+
+            return mensaje;
+        }
     }
 }
