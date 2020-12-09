@@ -55,6 +55,7 @@
             this.tsLimpiar = new System.Windows.Forms.ToolStripButton();
             this.vAutoresTableAdapter = new Biblioteca.dsvAutoresTableAdapters.vAutoresTableAdapter();
             this.editorialesTableAdapter = new Biblioteca.dsvEditorialesTableAdapters.EditorialesTableAdapter();
+            this.btnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vAutoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsvAutores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorialesBindingSource)).BeginInit();
@@ -282,11 +283,22 @@
             // 
             this.editorialesTableAdapter.ClearBeforeFill = true;
             // 
+            // btnReporte
+            // 
+            this.btnReporte.Location = new System.Drawing.Point(492, 54);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(92, 35);
+            this.btnReporte.TabIndex = 16;
+            this.btnReporte.Text = "Reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // frmLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 296);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.label8);
@@ -347,5 +359,6 @@
         private dsvEditoriales dsvEditoriales;
         private System.Windows.Forms.BindingSource editorialesBindingSource;
         private dsvEditorialesTableAdapters.EditorialesTableAdapter editorialesTableAdapter;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

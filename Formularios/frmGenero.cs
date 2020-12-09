@@ -82,5 +82,11 @@ namespace Biblioteca.Formularios
             MessageBox.Show(x.eliminar());
             limpiar();
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            Reportes.frmRGeneros x = new Reportes.frmRGeneros();
+            x.Show();
+        }
     }
 }

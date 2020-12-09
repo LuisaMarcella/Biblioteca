@@ -90,5 +90,11 @@ namespace Biblioteca.Formularios
             x.id = int.Parse(txtID.Text);
             MessageBox.Show(x.eliminar());
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            Reportes.frmRLibros x = new Reportes.frmRLibros();
+            x.Show();
+        }
     }
 }

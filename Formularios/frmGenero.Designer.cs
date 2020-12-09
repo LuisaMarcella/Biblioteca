@@ -37,6 +37,7 @@
             this.tsBuscar = new System.Windows.Forms.ToolStripButton();
             this.tsEliminar = new System.Windows.Forms.ToolStripButton();
             this.tsLimpiar = new System.Windows.Forms.ToolStripButton();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,11 +130,22 @@
             this.tsLimpiar.Text = "Limpiar";
             this.tsLimpiar.Click += new System.EventHandler(this.tsLimpiar_Click);
             // 
+            // btnReporte
+            // 
+            this.btnReporte.Location = new System.Drawing.Point(402, 15);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(75, 34);
+            this.btnReporte.TabIndex = 17;
+            this.btnReporte.Text = "Reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // frmGenero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 178);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtID);
@@ -162,5 +174,6 @@
         private System.Windows.Forms.ToolStripButton tsBuscar;
         private System.Windows.Forms.ToolStripButton tsEliminar;
         private System.Windows.Forms.ToolStripButton tsLimpiar;
+        private System.Windows.Forms.Button btnReporte;
     }
 }
